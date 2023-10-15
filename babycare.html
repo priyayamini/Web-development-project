@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>landingpage usinh html and css</title>
+<style type="text/css">
+    *{padding: 0; margin: 0; box-sizing: border-box;}
+    header {
+        width: 100;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.2)), url('https://media.istockphoto.com/id/1373098078/photo/foot-of-newborn-baby.jpg?s=612x612&w=0&k=20&c=w0gUtZy8UgCTAQ-OwSMcK7-9iiTlJL0PHXjZFwN2gEM=');
+        background-size: cover;
+        font-family: sans-serif;
+    }
+    nav {
+        width: 100%;
+        height: 100px;
+        background: none;
+        color: deepskyblue;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .logo {
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-decoration-color: #ff00b5;
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+    .menu a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        position:relative;
+    }
+
+    .menu a:before{
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        border-bottom: 2px solid #ff00b5;
+        transition: 0.4s linear;
+    }
+
+    .menu a:hover:before{
+        width: 90%;
+    }
+    .register a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 15px;
+        background: deepskyblue;
+        border-radius: 8px;
+        transition: 0.4s;
+    }
+
+    .register a:hover {
+        background: transparent;
+        border: 1px solid #ff00b5;
+    }
+
+    .h-txt {
+        max-width: 650px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+    }
+
+    .h-txt span{
+        letter-spacing: 5px;
+    }
+    .h-txt h1 {
+        font-size: 3.5em;
+    }
+
+    .h-txt p {
+        font-size: 15px;
+        letter-spacing: 3px;
+        padding: 10px 20px;
+        font-family:Garamond;
+    }
+    .h-txt a{
+        text-decoration:none;
+        background: deepskyblue;
+        color: white;
+        padding: 10px 20px;
+        letter-spacing: 5px;
+        transition: 0.4s;
+    }
+
+    .h-txt a:hover {
+        background: transparent;
+        border: 1px solid #ff00b5;
+    }
+    .section-heading {
+        font-size: 2.5rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0;
+        padding: 5rem 0 5rem 0;
+        text-align: center;
+    }
+
+    .sec-content-div {
+        font-size: 2rem;
+        text-align: start;
+        padding: 0 2rem 5rem 2rem;
+        width: auto;
+        justify-content: space-around;
+        max-width: 95rem;
+        margin: 0 auto;
+    }
+
+    .sec-padding {
+        padding: 8rem 0 10rem 0;
+    }
+
+    #about {
+        background-color: #fafafa;
+    }
+
+        #about img {
+            max-width: 100%;
+            height: auto;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
+        }
+
+    #varieties {
+        background-color: #e3e3e3;
+    }
+
+    .tile {
+        background-color: #fafafa;
+        height: 40rem;
+        width: 25rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+        padding: 1.5rem;
+        margin: 1.5rem;
+    }
+
+    @media (max-width: 680px) {
+        .tile {
+            width: auto;
+            max-width: 100%;
+            min-width: 20rem;
+            margin: 1.5rem auto;
+            height: auto;
+        }
+    }
+
+    .tile img {
+        width: 100%;
+        max-width: 48rem;
+        border-radius: 0.5rem;
+    }
+
+    .tile h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 1rem 0;
+        color: #e23d3d;
+        margin: 0;
+    }
+
+    .tile p {
+        font-size: 1.6rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tile:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.19), 0 16px 16px rgba(0, 0, 0, 0.23);
+    }
+
+    #our-service {
+        background-color: lightcyan;
+    }
+
+    .bars {
+        height: max-content;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: flex-start;
+        margin: 2rem;
+        width: 100%;
+    }
+
+    @media (max-width: 990px) {
+        .bars {
+            flex-flow: column wrap;
+        }
+
+        .icon-container {
+            margin: 0 2.5rem;
+        }
+    }
+
+    .bars .icon-container {
+        max-width: 10rem;
+        flex: 1;
+    }
+
+    .icon-container img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .bars .txt-container {
+        flex: 2;
+        padding: 3rem;
+    }
+
+    .txt-container h5 {
+        font-size: 4rem;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .txt-container p {
+        font-size: 2.3rem;
+    }
+
+    #contact {
+        background-color: mistyrose;
+        color: black;
+    }
+
+        #contact h6 {
+            font-size: 3rem;
+            font-weight: 500;
+        }
+
+    input[type="email"] {
+        border: none;
+        outline: 0;
+        font-size: 2rem;
+        border-radius: 0.4rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        padding: 2rem;
+    }
+
+    @media (max-width: 520px) {
+        #contact h6 {
+            font-size: 2rem;
+        }
+
+        #contact input[type="submit"],
+        #contact input[type="email"] {
+            margin: 1rem 1rem 0 1rem;
+        }
+    }
+
+    footer {
+        font-size: 1.4rem;
+        background-color: deepskyblue;
+        text-align: center;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        color: black;
+    }
+
+        footer a {
+            color: black;
+            text-decoration:  none;
+        }
+</style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                BabyCare
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">New Borns</a>
+                <a href="#">Diet Plan</a>
+                <a href="#">Health</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="register">
+                <a href="#">LOG IN/SIGN UP</a>
+            </div>
+        </nav>
+        <section class="h-txt">
+            <span>BabyCare</span>
+            <h1>Welcome to BabyCenter</h1>
+            <p>Join Now to get Consultations from Our Specialised Doctors</p>
+
+            <br>
+            <a href="#">Join Now</a>
+        </section>
+    </header>
+    <section id="about" class="sec-padding">
+        <h3 class="section-heading">ABOUT US</h3>
+        <div class="sec-content-div flexible">
+            <pre>
+      At BabyCare, our mission is simple—to provide you with trustworthy 
+      advice and a supportive community as you raise the next generation of
+      confident and compassionate kids.
+
+      It's no wonder our community of 9 million caregivers a month comes to
+      us for our comprehensive, inclusive, and honest parenting content.
+      You can rely on Parents to give you the knowledge you need to make the 
+      best decisions for your family.
+            </pre>
+            <br>
+            <div style="text-align: center;">
+            <img src="https://i.pinimg.com/originals/d1/35/18/d13518cbaffdb00cf86504dbacce5e5a.jpg" alt="babies" />
+            <em>
+                <br>
+                <br>
+                Hyderabad|Mumbai|Bangalore|Delhi
+                <br>
+            </em>
+            </div>
+        </div>
+    </section>
+    <section id="our-service" class="sec-padding">
+        <h3 class="section-heading">SUBSCRIPTIONS</h3>
+        <div class="sec-content-div">
+            <div class="bars">
+                <div class="icon-container">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3299/3299193.png" alt="" />
+                </div>
+                <div class="txt-container">
+                    <h5>New Born</h5>
+                    <p>The New Born plan costs Rs.1200 per month.</p>
+                </div>
+            </div>
+            <div class="bars">
+                <div class="icon-container">
+                    <img src="https://cdn-icons-png.flaticon.com/128/6009/6009764.png" alt="" />
+                </div>
+                <div class="txt-container">
+                    <h5>Infants</h5>
+                    <p>
+                        The Infants plan costs Rs.800 per month.
+                    </p>
+                </div>
+            </div>
+            <div class="bars">
+                <div class="icon-container">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1702/1702342.png" alt="" />
+                </div>
+                <div class="txt-container">
+                    <h5>Toddlers</h5>
+                    <p>
+                        The Toddlers plan costs Rs.500 per month.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec-padding" id="contact">
+        <h3 style ="text-decoration:underline;" class="section-heading">SUBSCRIBE HERE</h3>
+        <div class="sec-content-div flexible">
+            <h6>Please enter your Email ID to subscribe and know more :</h6>
+            <form id="form"
+                  action="https:contactus"
+                  method="POST">
+                <input type="email"
+                       name="email"
+                       id="email"
+                       placeholder="Your Email Address"
+                       required />
+                <input type="submit" class="btn" id="submit" value="Submit" />
+            </form>
+        </div>
+    </section>
+    </main>
+    <footer>
+        Created by
+        <a href="#">Varsha Indukuri</a>
+        </f
+</body>
+</html>
